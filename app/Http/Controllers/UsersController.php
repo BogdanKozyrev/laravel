@@ -13,10 +13,8 @@ class UsersController extends Controller
      */
     public function index(): View
     {
-        $users = User::query()->get();
-
         return view('users', [
-            'users' => $users
+            'users' => User::query()->get()
         ]);
     }
 }
