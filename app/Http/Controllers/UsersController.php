@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UsersController extends Controller
 {
-    public function index()
+    /**
+     * Выводит всех юзеров списком
+     * @return View
+     */
+    public function index(): View
     {
-        $user = User::query()->get();
-        dump($user->name);
-        dump($user->email);
-//        return 'Users';
+        $users = User::query()->get();
+
+        return view('users', [
+            'users' => $users
+        ]);
     }
 }
