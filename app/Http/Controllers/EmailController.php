@@ -8,7 +8,7 @@ use Illuminate\View\View;
 class EmailController extends Controller
 {
     /**
-     * Выводит всех юзеров списком
+     * Выводит електронные почты списком
      * @return View
      */
     public function index(): View
