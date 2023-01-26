@@ -13,8 +13,10 @@ class UsersController extends Controller
      */
     public function index(): View
     {
-        return view('users', [
-            'users' => User::query()->get()
-        ]);
+        $users = User::query()
+            ->withCount('orders')
+            ->get();
+
+        return view('users', compact('users'));
     }
 }
