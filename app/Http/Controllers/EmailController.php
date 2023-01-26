@@ -11,7 +11,7 @@ class EmailController extends Controller
      * Выводит електронные почты списком
      * @return View
      */
-    public function index(): View
+    public function emails():View
     {
         return view('emails', [
             'users' => User::query()->get()
