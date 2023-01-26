@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/user',  'App\Http\Controllers\UsersController@index');
+Route::get('/email',  'App\Http\Controllers\EmailController@index');
