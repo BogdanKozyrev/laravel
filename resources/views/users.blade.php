@@ -8,7 +8,7 @@
         <tr>
             <td>{{ $user->email }}</td>
             <td>{{ $user->name }}</td>
-            <td>{{ $user->orders_count }}</td>
+            <td><p><a href="http://127.0.0.1:8000/orders">{{ $user->orders_count }}</a></p></td>
         </tr>
     @endforeach
 </table>
