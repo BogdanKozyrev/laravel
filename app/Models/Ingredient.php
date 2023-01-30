@@ -19,6 +19,13 @@ class Ingredient extends Model
 {
     use HasFactory;
 
+    /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'title'
+    ];
+
     public function couriers(): BelongsToMany
     {
         return $this->belongsToMany(Сourier::class, 'сourier_ingredients');
