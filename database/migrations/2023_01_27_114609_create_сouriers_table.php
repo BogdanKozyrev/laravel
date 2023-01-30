@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_ingredients', function (Blueprint $table) {
+        Schema::create('сouriers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('ingredient_id');
-            $table->unsignedInteger('ingredient_quantity');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_igredients');
+        Schema::dropIfExists('сouriers');
     }
 };

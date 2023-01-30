@@ -2,17 +2,20 @@
     <tr>
         <th>ID</th>
         <th>Название</th>
-        <th>Цена</th>
-        <th>Дата создания</th>
-        <th>Дата изменения</th>
+        <th>Состав</th>
     </tr>
     @foreach($products as $product)
         <tr>
             <td>{{ $product->id }}</td>
             <td>{{ $product->name }}</td>
-            <td>{{ number_format($product->price, 2, '.', ' ') }}</td>
-            <td>{{ $product->created_at->format('d.m.y H:i') }}</td>
-            <td>{{ $product->updated_at->format('d.m.y H:i') }}</td>
+            <td>
+                @foreach($product->productIngredient as $productCourier)
+                    {{ $productCourier->ingredient->title }} / {{ $productCourier->ingredient_quantity }} <br>
+                    @foreach($productCourier->ingredient->couriers as $courier)
+                        {{ $courier->name }}
+                    @endforeach
+                @endforeach
+            </td>
         </tr>
     @endforeach
 </table>

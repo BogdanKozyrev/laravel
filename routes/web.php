@@ -23,4 +23,5 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 Route::get('users',  'App\Http\Controllers\UsersController@index');
 Route::get('email',  'App\Http\Controllers\EmailController@emails');
 Route::get('products',  'App\Http\Controllers\ProductController@products');
-Route::get('orders',  'App\Http\Controllers\OrdersController');
+Route::get('orders',  'App\Http\Controllers\OrdersController')->name('orders');
+
