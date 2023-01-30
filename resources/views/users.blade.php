@@ -8,7 +8,7 @@
         <tr>
             <td>{{ $user->email }}</td>
             <td>{{ $user->name }}</td>
-            <td>{{ $user->orders_count }}</td>
+            <td><p><a href="{{ route('orders', ['user_id' => $user->id]) }}">{{ $user->orders_count }}</a></p></td>
         </tr>
     @endforeach
 </table>

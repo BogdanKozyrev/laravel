@@ -14,7 +14,9 @@ class ProductController extends Controller
      */
     public function products(): View
     {
-        $products = Product::all();
+        $products = Product::query()
+            ->with('productIngredient.ingredient.couriers')
+            ->get();
 
         return view('products', compact('products'));
     }

@@ -1,4 +1,4 @@
-<table>
+<table style="border-bottom-color: #1a1e21; border-width: 3px">
     <tr>
         <th>id</th>
         <th>Юзер</th>
@@ -11,7 +11,10 @@
             <td>{{ $order->user->name }}</td>
             <td>
                 @foreach($order->orderProducts as $orderProduct)
-                    {{ $orderProduct->product->name }} / {{ $orderProduct->quantity }}
+                    <p><b>{{ $orderProduct->product->name }} / {{ $orderProduct->quantity }}</b></p>
+                    @foreach($orderProduct->product->productIngredient as $productIngredient)
+                        <p>{{ $productIngredient->ingredient->title }} / {{ $productIngredient->ingredient_quantity }}</p>
+                    @endforeach
                     <br>
                 @endforeach
             </td>

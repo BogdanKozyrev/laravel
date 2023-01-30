@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('emails', function (Blueprint $table) {
+        Schema::create('сourier_ingredients', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('ingredient_id');
+            $table->unsignedBigInteger('сourier_id');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emails');
+        Schema::dropIfExists('сourier_ingredients');
     }
 };
